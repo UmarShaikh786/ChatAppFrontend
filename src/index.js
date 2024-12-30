@@ -1,13 +1,37 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
-
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import Chat from './pages/Chat';
+import Login from './pages/Login';
+import Register from './pages/Register';
+import SetAvatar from './pages/SetAvatar';
+const router = createBrowserRouter([  
+  {
+    path: "/",
+    element:<Chat/>,
+  },
+  {
+    path: "/login",
+    element:<Login/>,
+  },
+  {
+    path: "/register",
+    element:<Register/>,
+  },
+  {
+    path: "/setAvatar",
+    element:<SetAvatar/>,
+  },
+]);
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+   <RouterProvider router={router}/>
   </React.StrictMode>
 );
 
